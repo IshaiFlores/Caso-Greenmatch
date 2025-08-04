@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encuesta</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+  
+  <meta charset="UTF-8">
+  <!-- Configuración de codificación de caracteres a UTF-8 -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Viewport para diseño responsive -->
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Inclusión de la librería jQuery -->
+
+  <style>
+    
+    /* Reset básico para body y html */
+    body, html {
+      margin: 0;  /* Elimina márgenes por defecto */
+      padding: 0; /* Elimina padding por defecto */
+      height: 100%; /* Ocupa el 100% del alto */
+      width: 100%;  /* Ocupa el 100% del ancho */
+    }
+
+    /* Estilos generales del cuerpo */
+    body {
+      display: flex; /* Usa flexbox para centrado */
+      justify-content: center; /* Centrado horizontal */
+      align-items: center; /* Centrado vertical */
+    }
+
+    /* Estilo para el video de fondo */
+    .videofondo {
+      position: fixed; /* Posición fija para que no se mueva al hacer scroll */
+      top: 0; /* Alineado arriba */
+      left:0; /* Alineado izquierda */
+      width: 100%; /* Ancho completo */
+      height: 100%; /* Alto completo */
+      object-fit: cover; /* Ajuste del video al contenedor */
+      background: url('imagenrespaldo.png'); /* Imagen de respaldo */
+      background-size: cover; /* Ajuste de la imagen de fondo */
+      z-index: -1; /* Coloca el elemento detrás de todo */
+    }
+
+    /* Contenedor principal del cuestionario */
+    .Cuestionario {
+      position: relative; /* Posición relativa para el z-index */
+      z-index: 1; /* Asegura que esté sobre el video */
+      display: flex; /* Usa flexbox */
+      flex-direction: column; /* Organización en columna */
+      background-color: white; /* Fondo blanco */
+      width: 600px; /* Ancho fijo */
+      height: 600px; /* Alto fijo */
+      max-width: 70%; /* Ancho máximo responsive */
+      padding: 30px; /* Relleno interno */
+      gap: 20px; /* Espacio entre elementos hijos */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Sombra */
+    }
+
+    /* Estilo del título del cuestionario */
+    .Cuestionario h2 {
+      text-align: center; /* Texto centrado */
+      margin-bottom: 20px; /* Margen inferior */
+    }
+
+    /* Contenedor de cada pregunta */
+    .question {
+      margin-bottom: 20px; /* Espacio entre preguntas */
+    }
+
+    /* Etiquetas de las preguntas */
+    label {
+      display: block; /* Hace que ocupe toda la línea */
+      margin-bottom: 20px; /* Espacio inferior */
+      font-weight: bold; /* Texto en negrita */
+    }
+
+    /* Estilo de los select (desplegables) */
+    select {
+      width: 100%; /* Ancho completo */
+      padding: 8px; /* Relleno interno */
+      border-radius: 8px; /* Bordes redondeados */
+      border: 1px solid #ccc; /* Borde gris claro */
+      margin-bottom: 20px; /* Espacio inferior */
+    }
+
+    /* Estilo del botón de enviar */
+    button {
+      display: block; /* Ocupa toda la línea */
+      width: 100%; /* Ancho completo */
+      padding: 12px; /* Relleno interno */
+      background-color: #28a745; /* Color verde */
+      color: white; /* Texto blanco */
+      font-size: 16px; /* Tamaño de fuente */
+      border: none; /* Sin bordes */
+      border-radius: 8px; /* Bordes redondeados */
+      cursor: pointer; /* Cursor tipo puntero */
+      transition: 0.3s; /* Transición suave para hover */
+    }
+
+    /* Efecto hover del botón */
+    button:hover {
+      background-color: #218838; /* Verde más oscuro */
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Contenedor del cuestionario -->
+  <div class="Cuestionario">
+    <h2>Encuesta Ecológica</h2> <!-- Título del cuestionario -->
+    
+    <!-- Formulario de la encuesta -->
+    <form id="formEncuesta">
+      <!-- Primera pregunta -->
+      <div class="Pregunta">
+        <label for="vives">¿Dónde vives?</label>
+        <select id="vives" name="vives">
+          <option value="">Selecciona una opción</option>
+          <option value="Ciudad">Ciudad</option>
+          <option value="Campo">Campo</option>
+          <option value="Playa">Playa</option>
+        </select>
+      </div>
+
+      <!-- Segunda pregunta -->
+      <div class="Pregunta">
+        <label for="valoras">¿Qué valorás más?</label>
+        <select id="valoras" name="valoras">
+          <option value="">Seleccione una opción</option>
+          <option value="Cuidado personal">Cuidado personal</option>
+          <option value="Cocina ecológica">Cocina ecológica</option>
+          <option value="Ahorro de energía">Ahorro de energía</option>
+        </select>
+      </div>
+
+      <!-- Tercera pregunta -->
+      <div class="Pregunta">
+        <label for="compromiso">¿Compromiso?</label>
+        <select id="compromiso" name="compromiso">
+          <option value="">Seleccione una opción</option>
+          <option value="Nunca">Nunca</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option>
+        </select>
+      </div>
+      
+      <!-- Botón de envío -->
+      <button type="submit">Enviar respuestas</button>
+      
+      <!-- Inclusión del archivo Jquery -->
+      <script src="js\Encuesta.js"></script>
+    </form>
+  </div>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop class="videofondo" poster="imagenrespaldo.png">
+    <source src="video.mp4" type="video/mp4">
+    <!-- Se muestra la imagen de respaldo si el video no carga -->
+  </video>
+</body>
+
+</html>

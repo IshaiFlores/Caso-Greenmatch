@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <!-- Configuración de metadatos y recursos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Configura el viewport para responsive design -->
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Incluye la librería jQuery-->
+
+   <title>Inicio</title>
+
+  <style>
+
+    /* Estilo general del cuerpo de la página */
+    body {
+      background-color: rgb(24, 41, 24); /* Fondo verde oscuro */
+      display: flex; /* Usa flexbox para centrar contenido */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 100vh; /* Ocupa el 100% del alto de la ventana */
+    }
+
+    /* Contenedor principal */
+    .divInicio {
+      display: flex;
+      flex-direction: column; /* Organiza los elementos en columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+      gap: 10px; /* Espacio entre elementos */
+    }
+
+    /* Animación de aparición */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0; /* Inicia invisible */
+        transform: translateY(40px); /* Comienza 40px más abajo */
+      }
+      100% {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(0); /* Vuelve a su posición original */
+      }
+    }
+
+    /* Estilo del texto de introducción */
+    #introduccion {
+      color: aliceblue; 
+      font-size: 4rem; 
+      font-weight: 600; 
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      opacity: 0; /* Inicialmente invisible */
+      animation: fadeInUp 1s ease-out forwards; /* Aplica animación */
+      animation-delay: 0.3s; /* Retrasa el inicio de la animación */
+    }
+
+    /* Estilo del botón */
+    #botonenc {
+      background-color: #fff000; /* Amarillo brillante */
+      border-radius: 15px; /* Bordes redondeados */
+      color: #000; /* Texto negro */
+      cursor: pointer; /* Cursor tipo puntero */
+      font-weight: bold; /* Texto en negrita */
+      padding: 15px 15px; /* Relleno interno */
+      text-align: center; /* Texto centrado */
+      transition: 200ms; /* Transición suave para efectos hover */
+      width: 20%; /* Ancho del botón */
+      box-sizing: border-box; /* Modelo de caja consistente */
+      border: 0; /* Sin borde */
+      font-size: 18px; /* Tamaño de fuente */
+      user-select: none; /* Evita selección de texto */
+      -webkit-user-select: none; /* Compatibilidad con Safari */
+      touch-action: manipulation; /* Mejora interacción táctil */
+      animation: fadeInUp 1s ease-out forwards; /* Misma animación que el texto */
+      animation-delay: 0.3s; /* Mismo retraso */
+      opacity: 0; /* Inicialmente invisible */
+    }
+
+    /* Efectos al interactuar con el botón */
+    #botonenc:not(:disabled):hover,
+    #botonenc:not(:disabled):focus {
+      outline: 0; /* Elimina contorno por defecto */
+      background: #dfdf94; /* Cambia color al pasar mouse */
+      box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15); /* Sombra */
+    }
+
+    /* Estilo cuando el botón está deshabilitado */
+    #botonenc:disabled {
+      filter: saturate(0.2) opacity(0.5); /* Reduce saturación y opacidad */
+      -webkit-filter: saturate(0.2) opacity(0.5); /* Para Safari */
+      cursor: not-allowed; /* Cursor de no permitido */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contenido visible de la página -->
+  <div class="divInicio">
+    <!-- Texto principal con animación -->
+    <p id="introduccion">
+      ¡Preparemos tu estilo ecológico!
+    </p>
+    
+    <!-- Botón interactivo -->
+    <button id="botonenc">Empecemos</button>
+  </div>
+
+  <!-- El archivo JQuery de la pagina-->
+  <script src="js\Inicio.js"></script>
+</body>
+</html>
