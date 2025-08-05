@@ -5,74 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style-recomendacion.css">
 
-<style>
-
-/* El video lo pueden quitar si prefieren un fondo solido para mostrar la tarjeta de recomendacion */
-
-.videofondo {
-      position: fixed; /* Posición fija para que no se mueva al hacer scroll */
-      top: 0; /* Alineado arriba */
-      left:0; /* Alineado izquierda */
-      width: 100%; /* Ancho completo */
-      height: 100%; /* Alto completo */
-      object-fit: cover; /* Ajuste del video al contenedor */
-      background: url('imagenrespaldo.png'); /* Imagen de respaldo */
-      background-size: cover; /* Ajuste de la imagen de fondo */
-      z-index: -1; /* Coloca el elemento detrás de todo */
-    }
-
-/* Centra el contenido */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
-
-/* Contenedor principal */
-.contenedor {
-  display: flex;
-  flex-direction: row; /* Horizontal */
-  align-items: center;
-  background-color: white;
-  width: 800px;
-  max-width: 90%;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  gap: 20px; /* Espacio entre imagen y texto */
-}
-
-/* Imagen de la izquierda */
-.contenedor img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Texto de la derecha */
-.texto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 15px;
-}
-
-.texto p {
-  margin: 0;
-  font-size: 18px;
-}
-
-.texto p.frase {
-  font-style: italic;
-  color: #555;
-}
-</style>
 </head>
 <body>
 

@@ -1,0 +1,76 @@
+/* Estilo general del cuerpo de la página */
+body {
+  background-color: #1a3e2f;; /* Fondo verde oscuro */
+  display: flex; /* Usa flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa el 100% del alto de la ventana */
+}
+
+/* Contenedor principal */
+.divInicio {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 10px; /* Espacio entre elementos */
+}
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Inicia invisible */
+    transform: translateY(40px); /* Comienza 40px más abajo */
+  }
+  100% {
+    opacity: 1; /* Termina completamente visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+  }
+}
+
+/* Estilo del texto de introducción */
+#introduccion {
+  color: #f8f9fa; 
+  font-size: 4rem; 
+  font-weight: 600; 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  opacity: 0; /* Inicialmente invisible */
+  animation: fadeInUp 1s ease-out forwards; /* Aplica animación */
+  animation-delay: 0.3s; /* Retrasa el inicio de la animación */
+}
+
+/* Estilo del botón */
+#botonenc {
+  background-color: #2e7d32; /* Verde medio */
+  border-radius: 15px; /* Bordes redondeados */
+  color: #f8f9fa; /* Blanco roto */
+  cursor: pointer; /* Cursor tipo puntero */
+  font-weight: bold; /* Texto en negrita */
+  padding: 15px 15px; /* Relleno interno */
+  text-align: center; /* Texto centrado */
+  transition: 200ms; /* Transición suave para efectos hover */
+  width: 20%; /* Ancho del botón */
+  box-sizing: border-box; /* Modelo de caja consistente */
+  border: 0; /* Sin borde */
+  font-size: 18px; /* Tamaño de fuente */
+  user-select: none; /* Evita selección de texto */
+  -webkit-user-select: none; /* Compatibilidad con Safari */
+  touch-action: manipulation; /* Mejora interacción táctil */
+  animation: fadeInUp 1s ease-out forwards; /* Misma animación que el texto */
+  animation-delay: 0.3s; /* Mismo retraso */
+  opacity: 0; /* Inicialmente invisible */
+}
+
+/* Efectos al interactuar con el botón */
+#botonenc:not(:disabled):hover,
+#botonenc:not(:disabled):focus {
+  outline: 0; /* Elimina contorno por defecto */
+  background: #4caf50; /* Verde claro *//* Cambia color al pasar mouse */
+  box-shadow: 0 0 0 2px rgba(248, 249, 250, 0.2), 0 3px 8px 0 rgba(0,0,0,.15); /* Sombra */
+}
+
+/* Estilo cuando el botón está deshabilitado */
+#botonenc:disabled {
+  filter: saturate(0.2) opacity(0.5); /* Reduce saturación y opacidad */
+  -webkit-filter: saturate(0.2) opacity(0.5); /* Para Safari */
+  cursor: not-allowed; /* Cursor de no permitido */
+}
