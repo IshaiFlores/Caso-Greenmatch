@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="style-recomendacion.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style-recomendacion.css">
 
 </head>
+
 <body>
+  <div class="contenedor">
+    <!-- Imagen -->
+    <img src="" alt="Imagen motivadora" id="img_p">
 
-<div class="contenedor">
-  <!-- Imagen -->
-  <img src="imagen_ejemplo.jpg" alt="Imagen motivadora">
-  
-  <!-- Texto -->
-  <div class="texto">
-    <p>Aqui va la descripción relacionada con la imagen.</p>
-    <p class="frase">Aqui iria la frase motivadora</p>
-    <a href="encuesta.html">Intentarlo de nuevo</a> 
-     <!--Redirecciona a la encuesta para intentarlo de nuevo  -->
+    <!-- Texto -->
+    <div class="texto">
+      <p id="name_p"></p>
+      <p id="desc">Aqui va la descripción relacionada con la imagen.</p>
+      <p class="frase" id="frase">Aqui iria la frase motivadora</p>
+        
+    <!--Redirecciona a la encuesta para intentarlo de nuevo  -->
+      <a href="encuesta.html">Intentarlo de nuevo</a>
+      
+    </div>
   </div>
-</div>
 
 
 
 
-<video autoplay muted loop class="videofondo" poster = "imagenrespaldo.png">
-        <source src="video.mp4" type="video/mp4">
-    </video>
+  <video autoplay muted loop class="videofondo" poster="imagenrespaldo.png">
+    <source src="video.mp4" type="video/mp4">
+  </video>
 
-
+  <script src="js/Recomendacion.js"></script>
 </body>
 
 
