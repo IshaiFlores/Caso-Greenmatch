@@ -1,0 +1,153 @@
+/* El video lo pueden quitar si prefieren un fondo solido para mostrar la tarjeta de recomendacion */
+
+.videofondo {
+  position: fixed; /* Posición fija para que no se mueva al hacer scroll */
+  top: 0; /* Alineado arriba */
+  left:0; /* Alineado izquierda */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  object-fit: cover; /* Ajuste del video al contenedor */
+  background: url('imagenrespaldo.png'); /* Imagen de respaldo */
+  background-size: cover; /* Ajuste de la imagen de fondo */
+  z-index: -1; /* Coloca el elemento detrás de todo */
+}
+
+/* Centra el contenido */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/*Contenedor principal */
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #edf1e6;
+  border: 2px solid #1a3e2f;
+  width: 80%;         /* Aumentado de 700px a 90% del viewport */
+  max-width: 950px;  /* Límite máximo más amplio */
+  padding: 30px;      /* Más espacio interno */
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  gap: 30px;          /* Mayor espacio entre imagen y texto */
+}
+
+
+/* Imagen de la izquierda */
+.contenedor img {
+  width: 280px;       
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Texto de la derecha */
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.texto #name_p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #193e2f; /* Verde oscuro */
+  margin: 0;
+  font-family:"Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+
+.texto #desc {  
+  margin: 0;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.texto #frase {
+  font-style: italic;
+  font-family: "Lato", sans-serif;
+  color: #2e7d32; /* Verde medio para la frase */
+  font-size: 18px;
+}
+
+.texto a {
+  text-decoration: underline; /* Sin subrayado */
+  color: hsl(155, 41%, 17%); /* Verde oscuro */
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px;
+  transition: color 0.3s; /* Transición suave al pasar el cursor */
+}
+
+/* ===============================
+   MEDIA QUERIES PARA RESPONSIVE
+   =============================== */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .contenedor {
+    width: 90%;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .contenedor img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .texto #name_p {
+    font-size: 1.4rem;
+  }
+
+  .texto #desc {
+    font-size: 1.1rem;
+  }
+
+  .texto #frase {
+    font-size: 0.95rem;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  .contenedor {
+    flex-direction: column; /* Pasa imagen arriba y texto abajo */
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .contenedor img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .texto {
+    gap: 10px;
+  }
+
+  .texto #name_p {
+    font-size: 1.3rem;
+  }
+
+  .texto #desc {
+    font-size: 1rem;
+  }
+
+  .texto #frase {
+    font-size: 0.9rem;
+  }
+
+  .texto a {
+    font-size: 0.95rem;
+  }
+}

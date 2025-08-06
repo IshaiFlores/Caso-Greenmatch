@@ -36,7 +36,7 @@ $(document).ready(function () {
 
                     $('#name_p').text(columnas[3]);
                     $('#desc').text(columnas[4]);
-                    $('#frase').text(columnas[5]);
+                    $('#frase').text('"' + columnas[5] + '"');
 
                     break; // salimos del bucle al encontrar la coincidencia
                 }

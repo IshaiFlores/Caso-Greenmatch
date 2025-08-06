@@ -43,34 +43,46 @@ body {
   background-color: #2e7d32; /* Verde medio */
   border-radius: 15px; /* Bordes redondeados */
   color: #f8f9fa; /* Blanco roto */
-  cursor: pointer; /* Cursor tipo puntero */
-  font-weight: bold; /* Texto en negrita */
-  padding: 15px 15px; /* Relleno interno */
-  text-align: center; /* Texto centrado */
-  transition: 200ms; /* Transición suave para efectos hover */
-  width: 20%; /* Ancho del botón */
-  box-sizing: border-box; /* Modelo de caja consistente */
-  border: 0; /* Sin borde */
-  font-size: 18px; /* Tamaño de fuente */
-  user-select: none; /* Evita selección de texto */
-  -webkit-user-select: none; /* Compatibilidad con Safari */
-  touch-action: manipulation; /* Mejora interacción táctil */
-  animation: fadeInUp 1s ease-out forwards; /* Misma animación que el texto */
-  animation-delay: 0.3s; /* Mismo retraso */
-  opacity: 0; /* Inicialmente invisible */
+  cursor: pointer;
+  font-weight: bold;
+  padding: 15px 25px; /* Espacio suficiente para el texto */
+  text-align: center;
+  transition: 200ms;
+  width: auto; /* Se ajusta al tamaño del texto */
+  min-width: 150px; /* Evita que se haga demasiado pequeño */
+  max-width: 300px; /* Evita que sea enorme en pantallas grandes */
+  box-sizing: border-box;
+  border: 0;
+  font-size: 1rem; /* Escalable */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 /* Efectos al interactuar con el botón */
 #botonenc:not(:disabled):hover,
 #botonenc:not(:disabled):focus {
-  outline: 0; /* Elimina contorno por defecto */
-  background: #4caf50; /* Verde claro *//* Cambia color al pasar mouse */
-  box-shadow: 0 0 0 2px rgba(248, 249, 250, 0.2), 0 3px 8px 0 rgba(0,0,0,.15); /* Sombra */
+  outline: 0;
+  background: #4caf50; /* Verde claro */
+  box-shadow: 0 0 0 2px rgba(248, 249, 250, 0.2),
+              0 3px 8px 0 rgba(0,0,0,.15);
 }
 
 /* Estilo cuando el botón está deshabilitado */
 #botonenc:disabled {
-  filter: saturate(0.2) opacity(0.5); /* Reduce saturación y opacidad */
-  -webkit-filter: saturate(0.2) opacity(0.5); /* Para Safari */
-  cursor: not-allowed; /* Cursor de no permitido */
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  #botonenc {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    padding: 12px 20px; /* Ajusta relleno */
+    width: 60%; /* Opcional: que ocupe más ancho en móviles */
+  }
 }
